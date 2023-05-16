@@ -8,23 +8,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-<div class="text-center display-4">Body Fat Calculator</div>
+<div class="text-center display-6">Body Fat Calculator</div>
   <div class="container d-flex">
-  <div class="container-md mt-5">
+  <div class="container-md mt-1">
   <form method="POST" autocomplete="off">
     <div class="row g3">
       <div class="col-md-6">
-        <label for="inputName" class="form-label  mt-2">Firstname</label>
+        <label for="inputName" class="form-label mt-1">Firstname</label>
         <input type="text" class="form-control" name="firstName" id="inputName" required>
       </div>
       <div class="col-md-6">
-        <label for="inputLastname" class="form-label mt-2">Lastname</label>
+        <label for="inputLastname" class="form-label mt-1">Lastname</label>
         <input type="text" class="form-control" name="lastName" id="inputLastname" required>
       </div>
     </div>
     <div class="row g3">
       <div class="col-md-6">
-        <label for="inputGender" class="form-label mt-2">Gender</label>
+        <label for="inputGender" class="form-label mt-1">Gender</label>
         <select id="inputGender" class="form-select" name="inputGender" required>
           <option disabled value="">Choose...</option>
           <option value="male" selected>Male</option>
@@ -32,48 +32,47 @@
         </select>
       </div>
       <div class="col-md-6">
-        <label for="inputAge" class="form-label mt-2">Age</label>
+        <label for="inputAge" class="form-label mt-1">Age</label>
         <input type="number" class="form-control" name="inputAge" id="inputAge" required>
       </div>
     </div>
     <div class="row g3">
       <div class="col-md-12">
-        <label for="inputHeight" class="form-label mt-2">Height</label>
+        <label for="inputHeight" class="form-label mt-1">Height</label>
         <input type="number" class="form-control" name="inputHeight" id="inputHeight" required>
       </div>
       <div class="col-md-12">
-        <label for="inputWeight" class="form-label mt-2">Weight</label>
+        <label for="inputWeight" class="form-label mt-1">Weight</label>
         <input type="number" class="form-control" name="inputWeight" id="inputWeight" required>
       </div>
     </div>
     <div class="row g3">
       <div class="col-md-12">
-        <label for="inputWaist" class="form-label mt-2">Waist</label>
+        <label for="inputWaist" class="form-label mt-1">Waist</label>
         <input type="number" class="form-control" name="inputWaist" id="inputWaist" required>
         <small class="form-text text-muted">Measure the waist circumference at the horizontal level around the navel for men, and at the level with the smallest width for women</small>
       </div>
     </div>
     <div class="row g3">
       <div class="col-md-6-12">
-        <label for="inputNeck" class="form-label mt-2">Neck</label>
+        <label for="inputNeck" class="form-label mt-1">Neck</label>
         <input type="number" class="form-control" name="inputNeck" id="inputNeck" required>
         <small class="form-text text-muted">Measure the circumference of the neck starting below the larynx, with the tape sloping downward to the front</small>
       </div>
     </div>
     <div class="row g3">
       <div class="col-md-12">
-        <label for="inputHip" class="form-label mt-2">Hip</label>
+        <label for="inputHip" class="form-label mt-1">Hip</label>
         <input type="number" class="form-control" name="inputHip" id="inputHip">
         <small class="form-text text-muted">For women only: measure the circumference of the hips at the largest horizontal measure</small>
       </div>
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary mt-2">Calculate</button>
+      <button type="submit" class="btn btn-primary btn-sm mt-1">Calculate</button>
     </div>
   </form>
 </div>
-<div class="container-md mt-5">
-  <h1 class="fs-5">Results</h1>
+<div class="container-md mt-1">
 <?php
 
 $BFP = 0; // body fat percentage
@@ -145,6 +144,7 @@ if (isset($_POST['firstName']) &&
         $color = 'red';
       }
       if ($result) {
+        echo '<h1 class="fs-5">Results</h1>';
         echo '<div class="result">';
         echo '<p>Dear ' . $_POST['firstName'] . ' ' . $_POST['lastName'] . ',</p>';
         echo '<p>You are ' . $_POST['inputAge'] . ' years old and ' . $_POST['inputGender'] . '.</p>';
